@@ -80,57 +80,133 @@
         .submit-button:hover {
             background-color: #45a049;
         }
+
+        code {
+            display: block;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
     <h1>Front-End Development Mock Exam</h1>
 
+    <!-- Instructions -->
+    <p><strong>Instructions to Candidates:</strong> Answer all questions from Section A. In Section B, choose one question to answer. Ensure all code is correctly formatted.</p>
+
+    <!-- Section A -->
+    <h2>Section A</h2>
+
     <!-- Question 1 -->
     <div class="question">
-        <label for="q1">1. Explain how the 'display' property in CSS can be used to switch between block-level and inline-level elements. (5 marks)</label>
+        <label for="q1">1. Write a simple HTML and CSS code to create a webpage with a navigation bar, two sections, and a footer. Make sure to apply Flexbox to arrange the layout. (10 marks)</label>
         <textarea id="q1"></textarea>
 
         <button class="hint-button" onclick="showHint(1)">Hint</button>
         <div class="hint-section" id="hint1">
-            <strong>Hint:</strong> Think about how the values 'block', 'inline', and 'inline-block' change the element's behavior in layout.
+            <strong>Hint:</strong> Think about using <code>display: flex;</code> for the layout. You can use <code>nav</code>, <code>section</code>, and <code>footer</code> HTML elements.
         </div>
 
         <button class="answer-button" onclick="showAnswer(1)">Reveal Answer</button>
         <div class="answer-section" id="answer1">
-            <strong>Answer:</strong> The 'display' property in CSS defines how an element is displayed. By default, block-level elements (e.g., &lt;div&gt;) take up the full width, while inline elements (e.g., &lt;span&gt;) only take up as much space as needed. Using 'display: block', you can turn an inline element into a block-level element, and vice versa with 'display: inline'. 'display: inline-block' allows an element to maintain its inline status but behave like a block element.
+            <strong>Answer:</strong>
+            <code>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &lt;head&gt;<br>
+                &lt;title&gt;Flexbox Layout&lt;/title&gt;<br>
+                &lt;style&gt;<br>
+                body {<br>
+                &nbsp;&nbsp;font-family: Arial, sans-serif;<br>
+                }<br><br>
+                .container {<br>
+                &nbsp;&nbsp;display: flex;<br>
+                &nbsp;&nbsp;flex-direction: column;<br>
+                &nbsp;&nbsp;min-height: 100vh;<br>
+                }<br><br>
+                nav, footer {<br>
+                &nbsp;&nbsp;background-color: #333;<br>
+                &nbsp;&nbsp;color: white;<br>
+                &nbsp;&nbsp;padding: 1rem;<br>
+                }<br><br>
+                section {<br>
+                &nbsp;&nbsp;flex: 1;<br>
+                &nbsp;&nbsp;padding: 20px;<br>
+                }<br>
+                &lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &lt;div class="container"&gt;<br>
+                &lt;nav&gt;This is the navigation bar&lt;/nav&gt;<br>
+                &lt;section&gt;This is section 1&lt;/section&gt;<br>
+                &lt;section&gt;This is section 2&lt;/section&gt;<br>
+                &lt;footer&gt;This is the footer&lt;/footer&gt;<br>
+                &lt;/div&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
+            </code>
+            <p><strong>Explanation:</strong> This code uses Flexbox to structure the layout of a webpage with a navigation bar, two sections, and a footer. Flexbox allows for flexible and responsive layouts, which are essential for modern web design.</p>
         </div>
     </div>
 
     <!-- Question 2 -->
     <div class="question">
-        <label for="q2">2. Describe the difference between absolute, relative, and fixed positioning in CSS. (5 marks)</label>
+        <label for="q2">2. Write a JavaScript function that checks if a given year is a leap year. (5 marks)</label>
         <textarea id="q2"></textarea>
 
         <button class="hint-button" onclick="showHint(2)">Hint</button>
         <div class="hint-section" id="hint2">
-            <strong>Hint:</strong> Focus on how each positioning type affects the element's position relative to its containing block or viewport.
+            <strong>Hint:</strong> A leap year is divisible by 4 but not by 100, unless it is divisible by 400.
         </div>
 
         <button class="answer-button" onclick="showAnswer(2)">Reveal Answer</button>
         <div class="answer-section" id="answer2">
-            <strong>Answer:</strong> 'absolute' positioning removes the element from the normal document flow and positions it relative to its closest positioned ancestor. 'relative' positioning moves an element relative to its normal position, without removing it from the flow. 'fixed' positioning removes the element from the document flow and fixes it relative to the viewport, meaning it stays in place as the user scrolls.
+            <strong>Answer:</strong>
+            <code>
+                function isLeapYear(year) {<br>
+                &nbsp;&nbsp;if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return true;<br>
+                &nbsp;&nbsp;} else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+                &nbsp;&nbsp;}<br>
+                }<br>
+                console.log(isLeapYear(2024)); // true<br>
+                console.log(isLeapYear(2023)); // false
+            </code>
+            <p><strong>Explanation:</strong> This JavaScript function checks if a given year is a leap year. It first checks whether the year is divisible by 4 but not divisible by 100, except for when it is divisible by 400. This logic ensures correct leap year detection.</p>
         </div>
     </div>
 
     <!-- Question 3 -->
     <div class="question">
-        <label for="q3">3. How does the 'float' property in CSS work? Provide an example of its usage. (5 marks)</label>
+        <label for="q3">3. Explain how JavaScript can manipulate JSON data to retrieve specific values from an object. Provide a simple code example. (5 marks)</label>
         <textarea id="q3"></textarea>
 
         <button class="hint-button" onclick="showHint(3)">Hint</button>
         <div class="hint-section" id="hint3">
-            <strong>Hint:</strong> Consider how elements move in relation to other floated elements and how the 'clear' property is used in conjunction.
+            <strong>Hint:</strong> Use <code>dot notation</code> or <code>bracket notation</code> to access values in a JSON object.
         </div>
 
         <button class="answer-button" onclick="showAnswer(3)">Reveal Answer</button>
         <div class="answer-section" id="answer3">
-            <strong>Answer:</strong> The 'float' property allows elements to move to the left or right of their containing element, allowing other content to wrap around it. For example, floating an image to the left with 'float: left;' will cause text to wrap around the image on the right. The 'clear' property is used to prevent elements from wrapping around floated elements.
+            <strong>Answer:</strong>
+            <code>
+                let jsonData = {<br>
+                &nbsp;&nbsp;"name": "John",<br>
+                &nbsp;&nbsp;"age": 30,<br>
+                &nbsp;&nbsp;"city": "New York"<br>
+                };<br><br>
+                // Accessing data using dot notation<br>
+                let name = jsonData.name;<br>
+                console.log(name); // John<br><br>
+                // Accessing data using bracket notation<br>
+                let age = jsonData["age"];<br>
+                console.log(age); // 30
+            </code>
+            <p><strong>Explanation:</strong> In this example, JSON data is stored in a JavaScript object. Dot notation (<code>jsonData.name</code>) or bracket notation (<code>jsonData["age"]</code>) is used to access values. JSON manipulation is essential when dealing with APIs and dynamic data.</p>
         </div>
     </div>
 
