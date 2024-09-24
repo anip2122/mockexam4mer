@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front-End Development Free Response Mock Exam</title>
+    <title>Front-End Development Mock Exam</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +40,30 @@
             font-size: 16px;
         }
 
+        .hint-button, .answer-button {
+            display: inline-block;
+            margin: 5px 0;
+            padding: 5px 10px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hint-button:hover, .answer-button:hover {
+            background-color: #0b7dda;
+        }
+
+        .hint-section, .answer-section {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
         .submit-button {
             display: block;
             width: 150px;
@@ -60,72 +84,68 @@
 </head>
 <body>
 
-    <h1>Front-End Development Free Response Mock Exam</h1>
+    <h1>Front-End Development Mock Exam</h1>
 
     <!-- Question 1 -->
     <div class="question">
-        <label for="q1">1. Explain the concept of the CSS box model and how it affects element layout in web pages.</label>
+        <label for="q1">1. Explain how the 'display' property in CSS can be used to switch between block-level and inline-level elements. (5 marks)</label>
         <textarea id="q1"></textarea>
+
+        <button class="hint-button" onclick="showHint(1)">Hint</button>
+        <div class="hint-section" id="hint1">
+            <strong>Hint:</strong> Think about how the values 'block', 'inline', and 'inline-block' change the element's behavior in layout.
+        </div>
+
+        <button class="answer-button" onclick="showAnswer(1)">Reveal Answer</button>
+        <div class="answer-section" id="answer1">
+            <strong>Answer:</strong> The 'display' property in CSS defines how an element is displayed. By default, block-level elements (e.g., &lt;div&gt;) take up the full width, while inline elements (e.g., &lt;span&gt;) only take up as much space as needed. Using 'display: block', you can turn an inline element into a block-level element, and vice versa with 'display: inline'. 'display: inline-block' allows an element to maintain its inline status but behave like a block element.
+        </div>
     </div>
 
     <!-- Question 2 -->
     <div class="question">
-        <label for="q2">2. Describe the difference between block-level and inline-level elements in HTML. Provide examples of each.</label>
+        <label for="q2">2. Describe the difference between absolute, relative, and fixed positioning in CSS. (5 marks)</label>
         <textarea id="q2"></textarea>
+
+        <button class="hint-button" onclick="showHint(2)">Hint</button>
+        <div class="hint-section" id="hint2">
+            <strong>Hint:</strong> Focus on how each positioning type affects the element's position relative to its containing block or viewport.
+        </div>
+
+        <button class="answer-button" onclick="showAnswer(2)">Reveal Answer</button>
+        <div class="answer-section" id="answer2">
+            <strong>Answer:</strong> 'absolute' positioning removes the element from the normal document flow and positions it relative to its closest positioned ancestor. 'relative' positioning moves an element relative to its normal position, without removing it from the flow. 'fixed' positioning removes the element from the document flow and fixes it relative to the viewport, meaning it stays in place as the user scrolls.
+        </div>
     </div>
 
     <!-- Question 3 -->
     <div class="question">
-        <label for="q3">3. What is the Document Object Model (DOM), and how does JavaScript interact with it?</label>
+        <label for="q3">3. How does the 'float' property in CSS work? Provide an example of its usage. (5 marks)</label>
         <textarea id="q3"></textarea>
-    </div>
 
-    <!-- Question 4 -->
-    <div class="question">
-        <label for="q4">4. How does CSS specificity work, and how does it influence which styles are applied to an element?</label>
-        <textarea id="q4"></textarea>
-    </div>
+        <button class="hint-button" onclick="showHint(3)">Hint</button>
+        <div class="hint-section" id="hint3">
+            <strong>Hint:</strong> Consider how elements move in relation to other floated elements and how the 'clear' property is used in conjunction.
+        </div>
 
-    <!-- Question 5 -->
-    <div class="question">
-        <label for="q5">5. Describe the process of creating a responsive web page. Mention the key techniques or tools you would use.</label>
-        <textarea id="q5"></textarea>
-    </div>
-
-    <!-- Question 6 -->
-    <div class="question">
-        <label for="q6">6. Explain the role of the <meta> tag in HTML, and provide examples of different meta tags commonly used in modern websites.</label>
-        <textarea id="q6"></textarea>
-    </div>
-
-    <!-- Question 7 -->
-    <div class="question">
-        <label for="q7">7. What are media queries in CSS, and how would you use them to make a website mobile-friendly?</label>
-        <textarea id="q7"></textarea>
-    </div>
-
-    <!-- Question 8 -->
-    <div class="question">
-        <label for="q8">8. Compare and contrast position: relative; and position: absolute; in CSS. Provide use cases for each.</label>
-        <textarea id="q8"></textarea>
-    </div>
-
-    <!-- Question 9 -->
-    <div class="question">
-        <label for="q9">9. What are semantic HTML elements, and why are they important in modern web development?</label>
-        <textarea id="q9"></textarea>
-    </div>
-
-    <!-- Question 10 -->
-    <div class="question">
-        <label for="q10">10. Explain the difference between a static and a dynamic web page. How do server-side and client-side programming languages contribute to dynamic content?</label>
-        <textarea id="q10"></textarea>
+        <button class="answer-button" onclick="showAnswer(3)">Reveal Answer</button>
+        <div class="answer-section" id="answer3">
+            <strong>Answer:</strong> The 'float' property allows elements to move to the left or right of their containing element, allowing other content to wrap around it. For example, floating an image to the left with 'float: left;' will cause text to wrap around the image on the right. The 'clear' property is used to prevent elements from wrapping around floated elements.
+        </div>
     </div>
 
     <!-- Submit Button -->
     <button class="submit-button" onclick="submitExam()">Submit Exam</button>
 
     <script>
+        function showHint(questionNum) {
+            document.getElementById("hint" + questionNum).style.display = "block";
+        }
+
+        function showAnswer(questionNum) {
+            document.getElementById("answer" + questionNum).style.display = "block";
+        }
+
         function submitExam() {
             alert("Exam submitted! Your answers have been recorded.");
         }
