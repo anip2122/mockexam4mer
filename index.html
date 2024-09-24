@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front-End Development Mock Exam</title>
+    <title>Front-End Development Mock Exam - Page 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -64,6 +64,19 @@
             border-radius: 5px;
         }
 
+        .back-button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+        }
+
         .submit-button {
             display: block;
             width: 150px;
@@ -74,11 +87,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 0 auto;
-        }
-
-        .submit-button:hover {
-            background-color: #45a049;
+            margin: 20px auto;
         }
 
         code {
@@ -92,110 +101,87 @@
 </head>
 <body>
 
-    <h1>Front-End Development Mock Exam</h1>
+    <h1>Front-End Development Mock Exam - Page 2</h1>
 
     <!-- Instructions -->
-    <p><strong>Instructions to Candidates:</strong> Answer all questions in the space provided. Write complete HTML, CSS, and JavaScript code where required.</p>
+    <p><strong>Instructions to Candidates:</strong> Answer one question in the space provided. Write complete HTML, CSS, and JavaScript code where required.</p>
 
-    <!-- Section A -->
-    <h2>Section A</h2>
+    <!-- Section B -->
+    <h2>Section B</h2>
 
-    <!-- Question 1 -->
+    <!-- Question 4 -->
     <div class="question">
-        <label for="q1">1. Write an HTML form with three input fields: one for a name, one for an email, and a submit button. Ensure the email field validates the user’s input. (10 marks)</label>
-        <textarea id="q1"></textarea>
+        <label for="q4">4. Write a JavaScript function that fetches a JSON file containing student information (name, age, grade) and displays the information on a webpage using DOM manipulation. (15 marks)</label>
+        <textarea id="q4"></textarea>
 
-        <button class="hint-button" onclick="showHint(1)">Hint</button>
-        <div class="hint-section" id="hint1">
-            <strong>Hint:</strong> Use the <code>&lt;input type="email"&gt;</code> for email validation and <code>required</code> attribute to make fields mandatory.
+        <button class="hint-button" onclick="showHint(4)">Hint</button>
+        <div class="hint-section" id="hint4">
+            <strong>Hint:</strong> Use <code>fetch()</code> to load JSON data, and <code>document.createElement()</code> to display the data.
         </div>
 
-        <button class="answer-button" onclick="showAnswer(1)">Reveal Answer</button>
-        <div class="answer-section" id="answer1">
+        <button class="answer-button" onclick="showAnswer(4)">Reveal Answer</button>
+        <div class="answer-section" id="answer4">
+            <strong>Answer:</strong>
+            <code>
+                fetch('students.json')<br>
+                .then(response => response.json())<br>
+                .then(data => {<br>
+                &nbsp;&nbsp;data.forEach(student => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;let div = document.createElement('div');<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;div.innerHTML = `Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}`;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(div);<br>
+                &nbsp;&nbsp;});<br>
+                });
+            </code>
+            <p><strong>Explanation:</strong> This JavaScript code uses <code>fetch()</code> to load the JSON data and iterates over the student list to display their information on the webpage using DOM manipulation.</p>
+        </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <label for="q5">5. Write an HTML form that saves user preferences (theme and language) using cookies. Write the JavaScript code to set and retrieve these cookies when the user revisits the page. (15 marks)</label>
+        <textarea id="q5"></textarea>
+
+        <button class="hint-button" onclick="showHint(5)">Hint</button>
+        <div class="hint-section" id="hint5">
+            <strong>Hint:</strong> Use <code>document.cookie</code> in JavaScript to store and retrieve cookie values.
+        </div>
+
+        <button class="answer-button" onclick="showAnswer(5)">Reveal Answer</button>
+        <div class="answer-section" id="answer5">
             <strong>Answer:</strong>
             <code>
                 &lt;form&gt;<br>
-                &nbsp;&nbsp;&lt;label for="name"&gt;Name:&lt;/label&gt;<br>
-                &nbsp;&nbsp;&lt;input type="text" id="name" name="name" required&gt;&lt;br&gt;&lt;br&gt;<br>
-                &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
-                &nbsp;&nbsp;&lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;<br>
-                &nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;<br>
-                &lt;/form&gt;
-            </code>
-            <p><strong>Explanation:</strong> This code demonstrates a basic HTML form with input fields for name and email. The email field uses the <code>type="email"</code> attribute to ensure proper email validation. Additionally, the <code>required</code> attribute ensures that both fields must be filled in before submission.</p>
-        </div>
-    </div>
+                &nbsp;&nbsp;&lt;label for="theme"&gt;Choose Theme:&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" id="theme" name="theme"&gt;&lt;br&gt;<br>
+                &nbsp;&nbsp;&lt;label for="language"&gt;Choose Language:&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" id="language" name="language"&gt;&lt;br&gt;<br>
+                &nbsp;&nbsp;&lt;input type="submit" value="Save Preferences"&gt;<br>
+                &lt;/form&gt;<br><br>
 
-    <!-- Question 2 -->
-    <div class="question">
-        <label for="q2">2. Create a table in HTML with 3 rows and 3 columns. The first row should be the header. Add CSS to style the table with borders and centered text. (10 marks)</label>
-        <textarea id="q2"></textarea>
+                &lt;script&gt;<br>
+                document.querySelector('form').addEventListener('submit', function(e) {<br>
+                &nbsp;&nbsp;e.preventDefault();<br>
+                &nbsp;&nbsp;document.cookie = `theme=${document.getElementById('theme').value}; path=/`;<br>
+                &nbsp;&nbsp;document.cookie = `language=${document.getElementById('language').value}; path=/`;<br>
+                });<br><br>
 
-        <button class="hint-button" onclick="showHint(2)">Hint</button>
-        <div class="hint-section" id="hint2">
-            <strong>Hint:</strong> Use <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, and <code>&lt;td&gt;</code> tags for the table, and style with the <code>border</code> and <code>text-align</code> properties.
-        </div>
-
-        <button class="answer-button" onclick="showAnswer(2)">Reveal Answer</button>
-        <div class="answer-section" id="answer2">
-            <strong>Answer:</strong>
-            <code>
-                &lt;style&gt;<br>
-                table, th, td {<br>
-                &nbsp;&nbsp;border: 1px solid black;<br>
-                &nbsp;&nbsp;border-collapse: collapse;<br>
-                &nbsp;&nbsp;text-align: center;<br>
-                &nbsp;&nbsp;padding: 10px;<br>
-                }<br>
-                &lt;/style&gt;<br><br>
-
-                &lt;table&gt;<br>
-                &nbsp;&nbsp;&lt;tr&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 1&lt;/th&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;/th&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 3&lt;/th&gt;<br>
-                &nbsp;&nbsp;&lt;/tr&gt;<br><br>
-                &nbsp;&nbsp;&lt;tr&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 1&lt;/td&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 2&lt;/td&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 3&lt;/td&gt;<br>
-                &nbsp;&nbsp;&lt;/tr&gt;<br><br>
-                &nbsp;&nbsp;&lt;tr&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 1&lt;/td&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 2&lt;/td&gt;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 3&lt;/td&gt;<br>
-                &nbsp;&nbsp;&lt;/tr&gt;<br>
-                &lt;/table&gt;
-            </code>
-            <p><strong>Explanation:</strong> This code creates an HTML table with 3 rows and 3 columns. The first row is styled as a header using the <code>&lt;th&gt;</code> tag. CSS is applied to add borders around the table cells and center-align the text inside the cells.</p>
-        </div>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="question">
-        <label for="q3">3. Write a JavaScript function that takes a string as input and returns the reverse of the string. (5 marks)</label>
-        <textarea id="q3"></textarea>
-
-        <button class="hint-button" onclick="showHint(3)">Hint</button>
-        <div class="hint-section" id="hint3">
-            <strong>Hint:</strong> Convert the string to an array using <code>split()</code>, reverse it with <code>reverse()</code>, and join it back to a string with <code>join()</code>.
-        </div>
-
-        <button class="answer-button" onclick="showAnswer(3)">Reveal Answer</button>
-        <div class="answer-section" id="answer3">
-            <strong>Answer:</strong>
-            <code>
-                function reverseString(str) {<br>
-                &nbsp;&nbsp;return str.split('').reverse().join('');<br>
+                function getCookie(name) {<br>
+                &nbsp;&nbsp;let value = "; " + document.cookie;<br>
+                &nbsp;&nbsp;let parts = value.split("; " + name + "=");<br>
+                &nbsp;&nbsp;if (parts.length === 2) return parts.pop().split(';').shift();<br>
                 }<br><br>
-                console.log(reverseString("hello")); // Output: "olleh"
+
+                document.getElementById('theme').value = getCookie('theme') || '';<br>
+                document.getElementById('language').value = getCookie('language') || '';<br>
+                &lt;/script&gt;
             </code>
-            <p><strong>Explanation:</strong> This JavaScript function splits the string into an array of characters, reverses the array, and then joins it back into a string. This method allows the string to be reversed efficiently using built-in array methods.</p>
+            <p><strong>Explanation:</strong> This code captures user input for theme and language preferences, stores them as cookies, and retrieves the stored cookies when the user revisits the page.</p>
         </div>
     </div>
 
-    <!-- Submit Button -->
-    <button class="submit-button" onclick="submitExam()">Submit Exam</button>
+    <!-- Back Button to go to Page 1 -->
+    <button class="back-button" onclick="window.location.href='index.html';">Back to Page 1</button>
 
     <script>
         function showHint(questionNum) {
