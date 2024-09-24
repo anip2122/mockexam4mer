@@ -95,118 +95,102 @@
     <h1>Front-End Development Mock Exam</h1>
 
     <!-- Instructions -->
-    <p><strong>Instructions to Candidates:</strong> Answer all questions from Section A. In Section B, choose one question to answer. Ensure all code is correctly formatted.</p>
+    <p><strong>Instructions to Candidates:</strong> Answer all questions in the space provided. Write complete HTML, CSS, and JavaScript code where required.</p>
 
     <!-- Section A -->
     <h2>Section A</h2>
 
     <!-- Question 1 -->
     <div class="question">
-        <label for="q1">1. Write a simple HTML and CSS code to create a webpage with a navigation bar, two sections, and a footer. Make sure to apply Flexbox to arrange the layout. (10 marks)</label>
+        <label for="q1">1. Write an HTML form with three input fields: one for a name, one for an email, and a submit button. Ensure the email field validates the user’s input. (10 marks)</label>
         <textarea id="q1"></textarea>
 
         <button class="hint-button" onclick="showHint(1)">Hint</button>
         <div class="hint-section" id="hint1">
-            <strong>Hint:</strong> Think about using <code>display: flex;</code> for the layout. You can use <code>nav</code>, <code>section</code>, and <code>footer</code> HTML elements.
+            <strong>Hint:</strong> Use the <code>&lt;input type="email"&gt;</code> for email validation and <code>required</code> attribute to make fields mandatory.
         </div>
 
         <button class="answer-button" onclick="showAnswer(1)">Reveal Answer</button>
         <div class="answer-section" id="answer1">
             <strong>Answer:</strong>
             <code>
-                &lt;!DOCTYPE html&gt;<br>
-                &lt;html&gt;<br>
-                &lt;head&gt;<br>
-                &lt;title&gt;Flexbox Layout&lt;/title&gt;<br>
-                &lt;style&gt;<br>
-                body {<br>
-                &nbsp;&nbsp;font-family: Arial, sans-serif;<br>
-                }<br><br>
-                .container {<br>
-                &nbsp;&nbsp;display: flex;<br>
-                &nbsp;&nbsp;flex-direction: column;<br>
-                &nbsp;&nbsp;min-height: 100vh;<br>
-                }<br><br>
-                nav, footer {<br>
-                &nbsp;&nbsp;background-color: #333;<br>
-                &nbsp;&nbsp;color: white;<br>
-                &nbsp;&nbsp;padding: 1rem;<br>
-                }<br><br>
-                section {<br>
-                &nbsp;&nbsp;flex: 1;<br>
-                &nbsp;&nbsp;padding: 20px;<br>
-                }<br>
-                &lt;/style&gt;<br>
-                &lt;/head&gt;<br>
-                &lt;body&gt;<br>
-                &lt;div class="container"&gt;<br>
-                &lt;nav&gt;This is the navigation bar&lt;/nav&gt;<br>
-                &lt;section&gt;This is section 1&lt;/section&gt;<br>
-                &lt;section&gt;This is section 2&lt;/section&gt;<br>
-                &lt;footer&gt;This is the footer&lt;/footer&gt;<br>
-                &lt;/div&gt;<br>
-                &lt;/body&gt;<br>
-                &lt;/html&gt;
+                &lt;form&gt;<br>
+                &nbsp;&nbsp;&lt;label for="name"&gt;Name:&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" id="name" name="name" required&gt;&lt;br&gt;&lt;br&gt;<br>
+                &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;<br>
+                &nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;<br>
+                &lt;/form&gt;
             </code>
-            <p><strong>Explanation:</strong> This code uses Flexbox to structure the layout of a webpage with a navigation bar, two sections, and a footer. Flexbox allows for flexible and responsive layouts, which are essential for modern web design.</p>
+            <p><strong>Explanation:</strong> This code demonstrates a basic HTML form with input fields for name and email. The email field uses the <code>type="email"</code> attribute to ensure proper email validation. Additionally, the <code>required</code> attribute ensures that both fields must be filled in before submission.</p>
         </div>
     </div>
 
     <!-- Question 2 -->
     <div class="question">
-        <label for="q2">2. Write a JavaScript function that checks if a given year is a leap year. (5 marks)</label>
+        <label for="q2">2. Create a table in HTML with 3 rows and 3 columns. The first row should be the header. Add CSS to style the table with borders and centered text. (10 marks)</label>
         <textarea id="q2"></textarea>
 
         <button class="hint-button" onclick="showHint(2)">Hint</button>
         <div class="hint-section" id="hint2">
-            <strong>Hint:</strong> A leap year is divisible by 4 but not by 100, unless it is divisible by 400.
+            <strong>Hint:</strong> Use <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, and <code>&lt;td&gt;</code> tags for the table, and style with the <code>border</code> and <code>text-align</code> properties.
         </div>
 
         <button class="answer-button" onclick="showAnswer(2)">Reveal Answer</button>
         <div class="answer-section" id="answer2">
             <strong>Answer:</strong>
             <code>
-                function isLeapYear(year) {<br>
-                &nbsp;&nbsp;if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;return true;<br>
-                &nbsp;&nbsp;} else {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
-                &nbsp;&nbsp;}<br>
+                &lt;style&gt;<br>
+                table, th, td {<br>
+                &nbsp;&nbsp;border: 1px solid black;<br>
+                &nbsp;&nbsp;border-collapse: collapse;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;padding: 10px;<br>
                 }<br>
-                console.log(isLeapYear(2024)); // true<br>
-                console.log(isLeapYear(2023)); // false
+                &lt;/style&gt;<br><br>
+
+                &lt;table&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 1&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 3&lt;/th&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br><br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 1&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 2&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 3&lt;/td&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br><br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 1&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 2&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 3&lt;/td&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                &lt;/table&gt;
             </code>
-            <p><strong>Explanation:</strong> This JavaScript function checks if a given year is a leap year. It first checks whether the year is divisible by 4 but not divisible by 100, except for when it is divisible by 400. This logic ensures correct leap year detection.</p>
+            <p><strong>Explanation:</strong> This code creates an HTML table with 3 rows and 3 columns. The first row is styled as a header using the <code>&lt;th&gt;</code> tag. CSS is applied to add borders around the table cells and center-align the text inside the cells.</p>
         </div>
     </div>
 
     <!-- Question 3 -->
     <div class="question">
-        <label for="q3">3. Explain how JavaScript can manipulate JSON data to retrieve specific values from an object. Provide a simple code example. (5 marks)</label>
+        <label for="q3">3. Write a JavaScript function that takes a string as input and returns the reverse of the string. (5 marks)</label>
         <textarea id="q3"></textarea>
 
         <button class="hint-button" onclick="showHint(3)">Hint</button>
         <div class="hint-section" id="hint3">
-            <strong>Hint:</strong> Use <code>dot notation</code> or <code>bracket notation</code> to access values in a JSON object.
+            <strong>Hint:</strong> Convert the string to an array using <code>split()</code>, reverse it with <code>reverse()</code>, and join it back to a string with <code>join()</code>.
         </div>
 
         <button class="answer-button" onclick="showAnswer(3)">Reveal Answer</button>
         <div class="answer-section" id="answer3">
             <strong>Answer:</strong>
             <code>
-                let jsonData = {<br>
-                &nbsp;&nbsp;"name": "John",<br>
-                &nbsp;&nbsp;"age": 30,<br>
-                &nbsp;&nbsp;"city": "New York"<br>
-                };<br><br>
-                // Accessing data using dot notation<br>
-                let name = jsonData.name;<br>
-                console.log(name); // John<br><br>
-                // Accessing data using bracket notation<br>
-                let age = jsonData["age"];<br>
-                console.log(age); // 30
+                function reverseString(str) {<br>
+                &nbsp;&nbsp;return str.split('').reverse().join('');<br>
+                }<br><br>
+                console.log(reverseString("hello")); // Output: "olleh"
             </code>
-            <p><strong>Explanation:</strong> In this example, JSON data is stored in a JavaScript object. Dot notation (<code>jsonData.name</code>) or bracket notation (<code>jsonData["age"]</code>) is used to access values. JSON manipulation is essential when dealing with APIs and dynamic data.</p>
+            <p><strong>Explanation:</strong> This JavaScript function splits the string into an array of characters, reverses the array, and then joins it back into a string. This method allows the string to be reversed efficiently using built-in array methods.</p>
         </div>
     </div>
 
