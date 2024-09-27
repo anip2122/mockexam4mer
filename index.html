@@ -98,165 +98,129 @@
 
     <h1>Front-End Development Mock Exam</h1>
 
-    <!-- Instructions -->
-    <p><strong>Instructions to Candidates:</strong> Answer all questions in the space provided. Write complete HTML, CSS, and JavaScript code where required.</p>
+    <p><strong>Instructions:</strong> Answer all questions. Each page contains 10 questions. Use the "Next" and "Back" buttons to navigate between pages.</p>
 
-    <!-- Section A -->
-    <div id="sectionA" class="section">
-        <h2>Section A</h2>
+    <!-- Page 1 -->
+    <div id="page1" class="section">
+        <h2>Page 1</h2>
 
         <!-- Question 1 -->
         <div class="question">
-            <label for="q1">1. Write an HTML form with three input fields: one for a name, one for an email, and a submit button. Ensure the email field validates the user’s input. (10 marks)</label>
+            <label for="q1">1. Create a basic HTML document structure with a title "My Web Page". (5 marks)</label>
             <textarea id="q1"></textarea>
 
             <button class="hint-button" onclick="showHint(1)">Hint</button>
             <div class="hint-section" id="hint1">
-                <strong>Hint:</strong> Use the <code>&lt;input type="email"&gt;</code> for email validation and <code>required</code> attribute to make fields mandatory.
+                <strong>Hint:</strong> Use the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;title&gt;</code> elements.
             </div>
 
             <button class="answer-button" onclick="showAnswer(1)">Reveal Answer</button>
             <div class="answer-section" id="answer1">
                 <strong>Answer:</strong>
                 <code>
-                    &lt;form&gt;<br>
-                    &nbsp;&nbsp;&lt;label for="name"&gt;Name:&lt;/label&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="text" id="name" name="name" required&gt;&lt;br&gt;&lt;br&gt;<br>
-                    &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;<br>
-                    &lt;/form&gt;
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &nbsp;&nbsp;&lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Web Page&lt;/title&gt;<br>
+                    &nbsp;&nbsp;&lt;/head&gt;<br>
+                    &nbsp;&nbsp;&lt;body&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Web Page&lt;/h1&gt;<br>
+                    &nbsp;&nbsp;&lt;/body&gt;<br>
+                    &lt;/html&gt;
                 </code>
-                <p><strong>Explanation:</strong> This code demonstrates a basic HTML form with input fields for name and email. The email field uses the <code>type="email"</code> attribute to ensure proper email validation. Additionally, the <code>required</code> attribute ensures that both fields must be filled in before submission.</p>
             </div>
         </div>
 
         <!-- Question 2 -->
         <div class="question">
-            <label for="q2">2. Create a table in HTML with 3 rows and 3 columns. The first row should be the header. Add CSS to style the table with borders and centered text. (10 marks)</label>
+            <label for="q2">2. Write a CSS rule to center-align text in all paragraphs. (5 marks)</label>
             <textarea id="q2"></textarea>
 
             <button class="hint-button" onclick="showHint(2)">Hint</button>
             <div class="hint-section" id="hint2">
-                <strong>Hint:</strong> Use <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, and <code>&lt;td&gt;</code> tags for the table, and style with the <code>border</code> and <code>text-align</code> properties.
+                <strong>Hint:</strong> Use the <code>text-align</code> property.
             </div>
 
             <button class="answer-button" onclick="showAnswer(2)">Reveal Answer</button>
             <div class="answer-section" id="answer2">
                 <strong>Answer:</strong>
                 <code>
-                    &lt;style&gt;<br>
-                    table, th, td {<br>
-                    &nbsp;&nbsp;border: 1px solid black;<br>
-                    &nbsp;&nbsp;border-collapse: collapse;<br>
+                    p {<br>
                     &nbsp;&nbsp;text-align: center;<br>
-                    &nbsp;&nbsp;padding: 10px;<br>
-                    }<br>
-                    &lt;/style&gt;<br><br>
-
-                    &lt;table&gt;<br>
-                    &nbsp;&nbsp;&lt;tr&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 1&lt;/th&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;/th&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 3&lt;/th&gt;<br>
-                    &nbsp;&nbsp;&lt;/tr&gt;<br><br>
-                    &nbsp;&nbsp;&lt;tr&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 1&lt;/td&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 2&lt;/td&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Col 3&lt;/td&gt;<br>
-                    &nbsp;&nbsp;&lt;/tr&gt;<br><br>
-                    &nbsp;&nbsp;&lt;tr&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 1&lt;/td&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 2&lt;/td&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Col 3&lt;/td&gt;<br>
-                    &nbsp;&nbsp;&lt;/tr&gt;<br>
-                    &lt;/table&gt;
+                    }
                 </code>
-                <p><strong>Explanation:</strong> This code creates an HTML table with 3 rows and 3 columns. The first row is styled as a header using the <code>&lt;th&gt;</code> tag. CSS is applied to add borders around the table cells and center-align the text inside the cells.</p>
             </div>
         </div>
+
+        <!-- Add more questions for page 1 -->
 
         <!-- Button to go to Page 2 -->
-        <button class="next-button" onclick="showSection('sectionB')">Go to Section B</button>
+        <button class="next-button" onclick="showSection('page2')">Go to Page 2</button>
     </div>
 
-    <!-- Section B -->
-    <div id="sectionB" class="section">
-        <h2>Section B</h2>
+    <!-- Page 2 -->
+    <div id="page2" class="section">
+        <h2>Page 2</h2>
 
-        <!-- Question 4 -->
+        <!-- Question 11 -->
         <div class="question">
-            <label for="q4">4. Write a JavaScript function that fetches a JSON file containing student information (name, age, grade) and displays the information on a webpage using DOM manipulation. (15 marks)</label>
-            <textarea id="q4"></textarea>
+            <label for="q11">11. Create a CSS class to apply a red background color and white text. (5 marks)</label>
+            <textarea id="q11"></textarea>
 
-            <button class="hint-button" onclick="showHint(4)">Hint</button>
-            <div class="hint-section" id="hint4">
-                <strong>Hint:</strong> Use <code>fetch()</code> to load JSON data, and <code>document.createElement()</code> to display the data.
+            <button class="hint-button" onclick="showHint(11)">Hint</button>
+            <div class="hint-section" id="hint11">
+                <strong>Hint:</strong> Use the <code>background-color</code> and <code>color</code> properties.
             </div>
 
-            <button class="answer-button" onclick="showAnswer(4)">Reveal Answer</button>
-            <div class="answer-section" id="answer4">
+            <button class="answer-button" onclick="showAnswer(11)">Reveal Answer</button>
+            <div class="answer-section" id="answer11">
                 <strong>Answer:</strong>
                 <code>
-                    fetch('students.json')<br>
-                    .then(response => response.json())<br>
-                    .then(data => {<br>
-                    &nbsp;&nbsp;data.forEach(student => {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;let div = document.createElement('div');<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;div.innerHTML = `Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}`;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;document.body.appendChild(div);<br>
-                    &nbsp;&nbsp;});<br>
-                    });
+                    .red-bg {<br>
+                    &nbsp;&nbsp;background-color: red;<br>
+                    &nbsp;&nbsp;color: white;<br>
+                    }
                 </code>
-                <p><strong>Explanation:</strong> This JavaScript code uses <code>fetch()</code> to load the JSON data and iterates over the student list to display their information on the webpage using DOM manipulation.</p>
             </div>
         </div>
 
-        <!-- Question 5 -->
-        <div class="question">
-            <label for="q5">5. Write an HTML form that saves user preferences (theme and language) using cookies. Write the JavaScript code to set and retrieve these cookies when the user revisits the page. (15 marks)</label>
-            <textarea id="q5"></textarea>
+        <!-- Add more questions for page 2 -->
 
-            <button class="hint-button" onclick="showHint(5)">Hint</button>
-            <div class="hint-section" id="hint5">
-                <strong>Hint:</strong> Use <code>document.cookie</code> in JavaScript to store and retrieve cookie values.
+        <!-- Button to go to Page 3 -->
+        <button class="next-button" onclick="showSection('page3')">Go to Page 3</button>
+        <button class="back-button" onclick="showSection('page1')">Back to Page 1</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div id="page3" class="section">
+        <h2>Page 3</h2>
+
+        <!-- Question 21 -->
+        <div class="question">
+            <label for="q21">21. Write a JavaScript function to calculate the factorial of a number. (10 marks)</label>
+            <textarea id="q21"></textarea>
+
+            <button class="hint-button" onclick="showHint(21)">Hint</button>
+            <div class="hint-section" id="hint21">
+                <strong>Hint:</strong> Use recursion or a loop to multiply the number by each preceding number.
             </div>
 
-            <button class="answer-button" onclick="showAnswer(5)">Reveal Answer</button>
-            <div class="answer-section" id="answer5">
+            <button class="answer-button" onclick="showAnswer(21)">Reveal Answer</button>
+            <div class="answer-section" id="answer21">
                 <strong>Answer:</strong>
                 <code>
-                    &lt;form&gt;<br>
-                    &nbsp;&nbsp;&lt;label for="theme"&gt;Choose Theme:&lt;/label&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="text" id="theme" name="theme"&gt;&lt;br&gt;<br>
-                    &nbsp;&nbsp;&lt;label for="language"&gt;Choose Language:&lt;/label&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="text" id="language" name="language"&gt;&lt;br&gt;<br>
-                    &nbsp;&nbsp;&lt;input type="submit" value="Save Preferences"&gt;<br>
-                    &lt;/form&gt;<br><br>
-
-                    &lt;script&gt;<br>
-                    document.querySelector('form').addEventListener('submit', function(e) {<br>
-                    &nbsp;&nbsp;e.preventDefault();<br>
-                    &nbsp;&nbsp;document.cookie = `theme=${document.getElementById('theme').value}; path=/`;<br>
-                    &nbsp;&nbsp;document.cookie = `language=${document.getElementById('language').value}; path=/`;<br>
-                    });<br><br>
-
-                    function getCookie(name) {<br>
-                    &nbsp;&nbsp;let value = "; " + document.cookie;<br>
-                    &nbsp;&nbsp;let parts = value.split("; " + name + "=");<br>
-                    &nbsp;&nbsp;if (parts.length === 2) return parts.pop().split(';').shift();<br>
-                    }<br><br>
-
-                    document.getElementById('theme').value = getCookie('theme') || '';<br>
-                    document.getElementById('language').value = getCookie('language') || '';<br>
-                    &lt;/script&gt;
+                    function factorial(n) {<br>
+                    &nbsp;&nbsp;if (n === 0 || n === 1) return 1;<br>
+                    &nbsp;&nbsp;return n * factorial(n - 1);<br>
+                    }
                 </code>
-                <p><strong>Explanation:</strong> This code captures user input for theme and language preferences, stores them as cookies, and retrieves the stored cookies when the user revisits the page.</p>
             </div>
         </div>
 
-        <!-- Back Button to go to Section A -->
-        <button class="back-button" onclick="showSection('sectionA')">Back to Section A</button>
+        <!-- Add more questions for page 3 -->
+
+        <!-- Back Button to go to Page 2 -->
+        <button class="back-button" onclick="showSection('page2')">Back to Page 2</button>
     </div>
 
     <script>
@@ -274,7 +238,7 @@
         }
 
         window.onload = function () {
-            showSection('sectionA'); // Start with Section A visible
+            showSection('page1'); // Start with Page 1 visible
         };
     </script>
 
