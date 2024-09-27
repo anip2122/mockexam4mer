@@ -3,244 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front-End Development Mock Exam</title>
+    <title>Front-End Web Development Mock Exam</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .question {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .hint-button, .answer-button {
-            display: inline-block;
-            margin: 5px 0;
-            padding: 5px 10px;
-            background-color: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .hint-button:hover, .answer-button:hover {
-            background-color: #0b7dda;
-        }
-
-        .hint-section, .answer-section {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .next-button, .back-button {
-            display: block;
-            width: 150px;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 20px auto;
-        }
-
-        .next-button:hover, .back-button:hover {
-            background-color: #45a049;
-        }
-
-        code {
-            display: block;
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .section {
-            display: none;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question-page { display: none; }
+        .visible { display: block; }
+        .btn { padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; margin-top: 20px; }
+        .btn:hover { background-color: #0056b3; }
+        ol { margin-left: 20px; }
+        .hint-answer { margin-top: 10px; font-style: italic; color: #666; }
     </style>
 </head>
 <body>
 
-    <h1>Front-End Development Mock Exam</h1>
+    <h1>Front-End Web Development Mock Exam</h1>
 
-    <p><strong>Instructions:</strong> Answer all questions. Each page contains 10 questions. Use the "Next" and "Back" buttons to navigate between pages.</p>
+    <!-- Page 1 (HTML Questions) -->
+    <div id="page1" class="question-page visible">
+        <h2>Page 1 - HTML Questions</h2>
+        <ol>
+            <li>
+                <p>Write HTML code to create a form that includes an input for name, email, and a submit button.</p>
+                <button onclick="showHint('hint1')">Show Hint</button>
+                <button onclick="showAnswer('answer1')">Show Answer</button>
+                <div id="hint1" class="hint-answer" style="display:none;">Use the &lt;form&gt;, &lt;input&gt;, and &lt;button&gt; tags.</div>
+                <div id="answer1" class="hint-answer" style="display:none;">
+                    &lt;form&gt;<br>
+                    &lt;label for="name"&gt;Name:&lt;/label&gt;<br>
+                    &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;<br>
+                    &lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+                    &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;<br>
+                    &lt;button type="submit"&gt;Submit&lt;/button&gt;<br>
+                    &lt;/form&gt;
+                </div>
+            </li>
 
-    <!-- Page 1 -->
-    <div id="page1" class="section">
-        <h2>Page 1</h2>
+            <li>
+                <p>List and describe four different types of web hosting services.</p>
+                <button onclick="showHint('hint2')">Show Hint</button>
+                <button onclick="showAnswer('answer2')">Show Answer</button>
+                <div id="hint2" class="hint-answer" style="display:none;">Think about shared, VPS, dedicated, and cloud hosting.</div>
+                <div id="answer2" class="hint-answer" style="display:none;">
+                    1. **Shared Hosting**: Multiple websites share the same server resources.<br>
+                    2. **VPS (Virtual Private Server) Hosting**: A virtual machine with dedicated resources, isolated from other websites.<br>
+                    3. **Dedicated Hosting**: A physical server exclusively used by one website.<br>
+                    4. **Cloud Hosting**: Resources come from multiple servers, ensuring high availability and scalability.
+                </div>
+            </li>
 
-        <!-- Question 1 -->
-        <div class="question">
-            <label for="q1">1. Create a basic HTML document structure with a title "My Web Page". (5 marks)</label>
-            <textarea id="q1"></textarea>
-
-            <button class="hint-button" onclick="showHint(1)">Hint</button>
-            <div class="hint-section" id="hint1">
-                <strong>Hint:</strong> Use the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;title&gt;</code> elements.
-            </div>
-
-            <button class="answer-button" onclick="showAnswer(1)">Reveal Answer</button>
-            <div class="answer-section" id="answer1">
-                <strong>Answer:</strong>
-                <code>
-                    &lt;!DOCTYPE html&gt;<br>
-                    &lt;html&gt;<br>
-                    &nbsp;&nbsp;&lt;head&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My Web Page&lt;/title&gt;<br>
-                    &nbsp;&nbsp;&lt;/head&gt;<br>
-                    &nbsp;&nbsp;&lt;body&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to My Web Page&lt;/h1&gt;<br>
-                    &nbsp;&nbsp;&lt;/body&gt;<br>
-                    &lt;/html&gt;
-                </code>
-            </div>
-        </div>
-
-        <!-- Question 2 -->
-        <div class="question">
-            <label for="q2">2. Write a CSS rule to center-align text in all paragraphs. (5 marks)</label>
-            <textarea id="q2"></textarea>
-
-            <button class="hint-button" onclick="showHint(2)">Hint</button>
-            <div class="hint-section" id="hint2">
-                <strong>Hint:</strong> Use the <code>text-align</code> property.
-            </div>
-
-            <button class="answer-button" onclick="showAnswer(2)">Reveal Answer</button>
-            <div class="answer-section" id="answer2">
-                <strong>Answer:</strong>
-                <code>
-                    p {<br>
-                    &nbsp;&nbsp;text-align: center;<br>
-                    }
-                </code>
-            </div>
-        </div>
-
-        <!-- Add more questions for page 1 -->
-
-        <!-- Button to go to Page 2 -->
-        <button class="next-button" onclick="showSection('page2')">Go to Page 2</button>
+            <li>
+                <p>Create the HTML to embed a video with a subtitle track. The video file is "example.mp4" and the subtitle is "subtitles.vtt".</p>
+                <button onclick="showHint('hint3')">Show Hint</button>
+                <button onclick="showAnswer('answer3')">Show Answer</button>
+                <div id="hint3" class="hint-answer" style="display:none;">Use the &lt;video&gt; and &lt;track&gt; tags.</div>
+                <div id="answer3" class="hint-answer" style="display:none;">
+                    &lt;video controls&gt;<br>
+                    &lt;source src="example.mp4" type="video/mp4"&gt;<br>
+                    &lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;<br>
+                    &lt;/video&gt;
+                </div>
+            </li>
+        </ol>
+        <button class="btn" onclick="goToPage('page2')">Next Page</button>
     </div>
 
-    <!-- Page 2 -->
-    <div id="page2" class="section">
-        <h2>Page 2</h2>
-
-        <!-- Question 11 -->
-        <div class="question">
-            <label for="q11">11. Create a CSS class to apply a red background color and white text. (5 marks)</label>
-            <textarea id="q11"></textarea>
-
-            <button class="hint-button" onclick="showHint(11)">Hint</button>
-            <div class="hint-section" id="hint11">
-                <strong>Hint:</strong> Use the <code>background-color</code> and <code>color</code> properties.
-            </div>
-
-            <button class="answer-button" onclick="showAnswer(11)">Reveal Answer</button>
-            <div class="answer-section" id="answer11">
-                <strong>Answer:</strong>
-                <code>
-                    .red-bg {<br>
-                    &nbsp;&nbsp;background-color: red;<br>
-                    &nbsp;&nbsp;color: white;<br>
+    <!-- Page 2 (CSS Questions) -->
+    <div id="page2" class="question-page">
+        <h2>Page 2 - CSS Questions</h2>
+        <ol>
+            <li>
+                <p>Write CSS code to center an element horizontally using Flexbox.</p>
+                <button onclick="showHint('hint4')">Show Hint</button>
+                <button onclick="showAnswer('answer4')">Show Answer</button>
+                <div id="hint4" class="hint-answer" style="display:none;">Use `display: flex` and `justify-content: center`.</div>
+                <div id="answer4" class="hint-answer" style="display:none;">
+                    .container {<br>
+                    &nbsp;&nbsp;display: flex;<br>
+                    &nbsp;&nbsp;justify-content: center;<br>
                     }
-                </code>
-            </div>
-        </div>
+                </div>
+            </li>
 
-        <!-- Add more questions for page 2 -->
+            <li>
+                <p>Explain the CSS box model and how padding and margin differ.</p>
+                <button onclick="showHint('hint5')">Show Hint</button>
+                <button onclick="showAnswer('answer5')">Show Answer</button>
+                <div id="hint5" class="hint-answer" style="display:none;">Focus on content, padding, border, and margin.</div>
+                <div id="answer5" class="hint-answer" style="display:none;">
+                    The **CSS box model** consists of:<br>
+                    1. **Content**: The actual content of the element.<br>
+                    2. **Padding**: Space between the content and the border. It increases the size of the element.<br>
+                    3. **Border**: The line surrounding the padding (if set).<br>
+                    4. **Margin**: Space outside the border, pushing elements away from each other. It does not affect the element's size.
+                </div>
+            </li>
 
-        <!-- Button to go to Page 3 -->
-        <button class="next-button" onclick="showSection('page3')">Go to Page 3</button>
-        <button class="back-button" onclick="showSection('page1')">Back to Page 1</button>
+            <li>
+                <p>Write the CSS to change the background color of all even list items in an unordered list.</p>
+                <button onclick="showHint('hint6')">Show Hint</button>
+                <button onclick="showAnswer('answer6')">Show Answer</button>
+                <div id="hint6" class="hint-answer" style="display:none;">Use the `nth-child` selector.</div>
+                <div id="answer6" class="hint-answer" style="display:none;">
+                    ul li:nth-child(even) {<br>
+                    &nbsp;&nbsp;background-color: lightgray;<br>
+                    }
+                </div>
+            </li>
+        </ol>
+        <button class="btn" onclick="goToPage('page1')">Back to Page 1</button>
+        <button class="btn" onclick="goToPage('page3')">Next Page</button>
     </div>
 
-    <!-- Page 3 -->
-    <div id="page3" class="section">
-        <h2>Page 3</h2>
-
-        <!-- Question 21 -->
-        <div class="question">
-            <label for="q21">21. Write a JavaScript function to calculate the factorial of a number. (10 marks)</label>
-            <textarea id="q21"></textarea>
-
-            <button class="hint-button" onclick="showHint(21)">Hint</button>
-            <div class="hint-section" id="hint21">
-                <strong>Hint:</strong> Use recursion or a loop to multiply the number by each preceding number.
-            </div>
-
-            <button class="answer-button" onclick="showAnswer(21)">Reveal Answer</button>
-            <div class="answer-section" id="answer21">
-                <strong>Answer:</strong>
-                <code>
-                    function factorial(n) {<br>
-                    &nbsp;&nbsp;if (n === 0 || n === 1) return 1;<br>
-                    &nbsp;&nbsp;return n * factorial(n - 1);<br>
+    <!-- Page 3 (JavaScript Questions) -->
+    <div id="page3" class="question-page">
+        <h2>Page 3 - JavaScript Questions</h2>
+        <ol>
+            <li>
+                <p>Write a JavaScript function that calculates the sum of two numbers.</p>
+                <button onclick="showHint('hint7')">Show Hint</button>
+                <button onclick="showAnswer('answer7')">Show Answer</button>
+                <div id="hint7" class="hint-answer" style="display:none;">Use a function with two parameters and return the sum.</div>
+                <div id="answer7" class="hint-answer" style="display:none;">
+                    function sum(a, b) {<br>
+                    &nbsp;&nbsp;return a + b;<br>
                     }
-                </code>
-            </div>
-        </div>
+                </div>
+            </li>
 
-        <!-- Add more questions for page 3 -->
+            <li>
+                <p>Explain the difference between local storage and session storage in JavaScript.</p>
+                <button onclick="showHint('hint8')">Show Hint</button>
+                <button onclick="showAnswer('answer8')">Show Answer</button>
+                <div id="hint8" class="hint-answer" style="display:none;">Think about data persistence across sessions.</div>
+                <div id="answer8" class="hint-answer" style="display:none;">
+                    **Local storage** stores data with no expiration date, allowing it to persist across browser sessions.<br>
+                    **Session storage** stores data only for the duration of the browser session, meaning it is deleted when the session ends.
+                </div>
+            </li>
 
-        <!-- Back Button to go to Page 2 -->
-        <button class="back-button" onclick="showSection('page2')">Back to Page 2</button>
+            <li>
+                <p>Write JavaScript code to set and delete a cookie.</p>
+                <button onclick="showHint('hint9')">Show Hint</button>
+                <button onclick="showAnswer('answer9')">Show Answer</button>
+                <div id="hint9" class="hint-answer" style="display:none;">Use `document.cookie` to manipulate cookies.</div>
+                <div id="answer9" class="hint-answer" style="display:none;">
+                    To set a cookie:<br>
+                    document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2024 12:00:00 UTC; path=/";<br><br>
+                    To delete a cookie:<br>
+                    document.cookie = "username=JohnDoe; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                </div>
+            </li>
+        </ol>
+        <button class="btn" onclick="goToPage('page2')">Back to Page 2</button>
     </div>
 
     <script>
-        function showHint(questionNum) {
-            document.getElementById("hint" + questionNum).style.display = "block";
+        function goToPage(pageId) {
+            const pages = document.querySelectorAll('.question-page');
+            pages.forEach(page => page.classList.remove('visible'));
+            document.getElementById(pageId).classList.add('visible');
         }
 
-        function showAnswer(questionNum) {
-            document.getElementById("answer" + questionNum).style.display = "block";
+        function showHint(hintId) {
+            document.getElementById(hintId).style.display = 'block';
         }
 
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
-            document.getElementById(sectionId).style.display = 'block';
+        function showAnswer(answerId) {
+            document.getElementById(answerId).style.display = 'block';
         }
-
-        window.onload = function () {
-            showSection('page1'); // Start with Page 1 visible
-        };
     </script>
-
 </body>
 </html>
