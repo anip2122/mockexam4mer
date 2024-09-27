@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Web Development Mock Exam - Pages 4-6</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question-page { display: none; }
+        .visible { display: block; }
+        .btn { padding: 10px 20px; background-color: #007BFF; color: white; border: none; cursor: pointer; margin-top: 20px; }
+        .btn:hover { background-color: #0056b3; }
+        ol { margin-left: 20px; }
+        .hint-answer { margin-top: 10px; font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+
+    <h1>Front-End Web Development Mock Exam - Pages 4-6</h1>
+
+    <!-- Page 4 (HTML Concepts) -->
+    <div id="page4" class="question-page visible">
+        <h2>Page 4 - HTML Concepts and Forms</h2>
+        <ol>
+            <li>
+                <p>Write the HTML code for a form that allows a user to input their username, password, and age. Include appropriate input types and a submit button.</p>
+                <button onclick="showHint('hint10')">Show Hint</button>
+                <button onclick="showAnswer('answer10')">Show Answer</button>
+                <div id="hint10" class="hint-answer" style="display:none;">Use &lt;input type="password"&gt; for the password field and &lt;input type="number"&gt; for the age.</div>
+                <div id="answer10" class="hint-answer" style="display:none;">
+                    &lt;form&gt;<br>
+                    &lt;label for="username"&gt;Username:&lt;/label&gt;<br>
+                    &lt;input type="text" id="username" name="username" required&gt;&lt;br&gt;<br>
+                    &lt;label for="password"&gt;Password:&lt;/label&gt;<br>
+                    &lt;input type="password" id="password" name="password" required&gt;&lt;br&gt;<br>
+                    &lt;label for="age"&gt;Age:&lt;/label&gt;<br>
+                    &lt;input type="number" id="age" name="age" required&gt;&lt;br&gt;<br>
+                    &lt;button type="submit"&gt;Submit&lt;/button&gt;<br>
+                    &lt;/form&gt;
+                </div>
+            </li>
+
+            <li>
+                <p>What is the purpose of the &lt;fieldset&gt; and &lt;legend&gt; elements in HTML forms?</p>
+                <button onclick="showHint('hint11')">Show Hint</button>
+                <button onclick="showAnswer('answer11')">Show Answer</button>
+                <div id="hint11" class="hint-answer" style="display:none;">These elements are used to group form elements.</div>
+                <div id="answer11" class="hint-answer" style="display:none;">
+                    The &lt;fieldset&gt; element is used to group related elements in a form, and the &lt;legend&gt; element provides a caption for the &lt;fieldset&gt;. This improves form structure and accessibility.
+                </div>
+            </li>
+        </ol>
+        <button class="btn" onclick="goToPage('page5')">Next Page</button>
+    </div>
+
+    <!-- Page 5 (CSS Concepts and Box Model) -->
+    <div id="page5" class="question-page">
+        <h2>Page 5 - CSS Box Model and Layout</h2>
+        <ol>
+            <li>
+                <p>Describe the CSS box model and its components. How does padding affect the total size of an element?</p>
+                <button onclick="showHint('hint12')">Show Hint</button>
+                <button onclick="showAnswer('answer12')">Show Answer</button>
+                <div id="hint12" class="hint-answer" style="display:none;">The box model includes content, padding, border, and margin.</div>
+                <div id="answer12" class="hint-answer" style="display:none;">
+                    The **CSS box model** includes:<br>
+                    1. **Content**: The actual content inside the element.<br>
+                    2. **Padding**: Space between the content and the border, which increases the size of the element.<br>
+                    3. **Border**: The line surrounding the padding (optional).<br>
+                    4. **Margin**: Space outside the border, separating the element from others.
+                </div>
+            </li>
+
+            <li>
+                <p>Write the CSS code to create a 2-column layout using the `float` property. The left column should be 30% wide, and the right column should be 70% wide.</p>
+                <button onclick="showHint('hint13')">Show Hint</button>
+                <button onclick="showAnswer('answer13')">Show Answer</button>
+                <div id="hint13" class="hint-answer" style="display:none;">Use `float: left;` and width percentages.</div>
+                <div id="answer13" class="hint-answer" style="display:none;">
+                    .left-column {<br>
+                    &nbsp;&nbsp;width: 30%;<br>
+                    &nbsp;&nbsp;float: left;<br>
+                    }<br><br>
+                    .right-column {<br>
+                    &nbsp;&nbsp;width: 70%;<br>
+                    &nbsp;&nbsp;float: left;<br>
+                    }<br><br>
+                    .clearfix::after {<br>
+                    &nbsp;&nbsp;content: "";<br>
+                    &nbsp;&nbsp;display: table;<br>
+                    &nbsp;&nbsp;clear: both;<br>
+                    }
+                </div>
+            </li>
+        </ol>
+        <button class="btn" onclick="goToPage('page6')">Next Page</button>
+    </div>
+
+    <!-- Page 6 (JavaScript and Storage) -->
+    <div id="page6" class="question-page">
+        <h2>Page 6 - JavaScript Events and Storage</h2>
+        <ol>
+            <li>
+                <p>Write a JavaScript function that adds an event listener to a button that alerts "Button Clicked" when the button is clicked.</p>
+                <button onclick="showHint('hint14')">Show Hint</button>
+                <button onclick="showAnswer('answer14')">Show Answer</button>
+                <div id="hint14" class="hint-answer" style="display:none;">Use `addEventListener` to handle the event.</div>
+                <div id="answer14" class="hint-answer" style="display:none;">
+                    document.getElementById("myButton").addEventListener("click", function() {<br>
+                    &nbsp;&nbsp;alert("Button Clicked!");<br>
+                    });
+                </div>
+            </li>
+
+            <li>
+                <p>Explain the difference between local storage and session storage in JavaScript. How would you store and retrieve a user's name using local storage?</p>
+                <button onclick="showHint('hint15')">Show Hint</button>
+                <button onclick="showAnswer('answer15')">Show Answer</button>
+                <div id="hint15" class="hint-answer" style="display:none;">Focus on persistence across sessions and methods like `localStorage.setItem` and `localStorage.getItem`.</div>
+                <div id="answer15" class="hint-answer" style="display:none;">
+                    **Local storage** persists data even after the browser is closed, whereas **session storage** is cleared when the session ends.<br><br>
+                    Storing a name in local storage:<br>
+                    localStorage.setItem("username", "JohnDoe");<br><br>
+                    Retrieving the stored name:<br>
+                    var name = localStorage.getItem("username");
+                </div>
+            </li>
+
+            <li>
+                <p>Write a JavaScript function to set and delete a cookie with a specified name and value.</p>
+                <button onclick="showHint('hint16')">Show Hint</button>
+                <button onclick="showAnswer('answer16')">Show Answer</button>
+                <div id="hint16" class="hint-answer" style="display:none;">Use `document.cookie` for cookie manipulation.</div>
+                <div id="answer16" class="hint-answer" style="display:none;">
+                    Setting a cookie:<br>
+                    document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2024 12:00:00 UTC; path=/";<br><br>
+                    Deleting a cookie:<br>
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                </div>
+            </li>
+        </ol>
+        <button class="btn" onclick="goToPage('page5')">Back to Page 5</button>
+    </div>
+
+    <script>
+        function goToPage(pageId) {
+            const pages = document.querySelectorAll('.question-page');
+            pages.forEach(page => page.classList.remove('visible'));
+            document.getElementById(pageId).classList.add('visible');
+        }
+
+        function showHint(hintId) {
+            document.getElementById(hintId).style.display = 'block';
+        }
+
+        function showAnswer(answerId) {
+            document.getElementById(answerId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
